@@ -1,0 +1,29 @@
+<div fxFill fxLayout="column" fxLayoutAlign="start start">
+  <h2>Компоновщик UTM меток</h2>
+  <mat-form-field fxFlex="50">
+    <input matInput placeholder="Введите адрес сайта" value="">
+    <mat-hint align="start">
+      <span>Например, https://example.com</span>
+    </mat-hint>
+  </mat-form-field>
+
+  <h3>Выберите UTM метки</h3>
+
+  <mat-form-field fxFlex="20">
+    <input type="text" matInput [formControl]="utmSourceControl" [matAutocomplete]="utmSourceAuto" placeholder="utmSource">
+  </mat-form-field>
+  <mat-autocomplete #utmSourceAuto="matAutocomplete">
+    <mat-option *ngFor="let option of utmSourceOptions" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-autocomplete>
+  <p></p>
+  <mat-form-field fxFlex="20">
+    <input type="text" matInput [formControl]="utmMediumControl" [matAutocomplete]="utmMediumAuto" placeholder="utmMedium">
+  </mat-form-field>
+  <mat-autocomplete #utmMediumAuto="matAutocomplete">
+    <mat-option *ngFor="let option of utmMediumOptions" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-autocomplete>
+</div>

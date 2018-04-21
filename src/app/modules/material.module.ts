@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
+  MatAutocompleteModule,
   MatButtonModule,
   MatCheckboxModule,
   MatFormFieldModule,
@@ -14,6 +15,7 @@ import {
 } from '@angular/material';
 
 const materials = [
+  MatAutocompleteModule,
   MatButtonModule,
   MatCheckboxModule,
   MatFormFieldModule,
