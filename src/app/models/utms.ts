@@ -9,6 +9,7 @@ const utms = [
             'vk',
             'mail',
         ],
+        value: '',
     }, {
         name: 'utm_medium',
         placeholder: 'канал',
@@ -19,6 +20,7 @@ const utms = [
             'email',
             'organic',
         ],
+        value: '',
     }, {
         name: 'utm_campaign',
         placeholder: 'кампания',
@@ -30,6 +32,7 @@ const utms = [
             'ip_telephony',
             'televizory',
         ],
+        value: '',
     }, {
         name: 'utm_term',
         placeholder: 'фраза',
@@ -39,6 +42,7 @@ const utms = [
             'gostinicy_ryadom',
             'skidki_obuv',
         ],
+        value: '',
     }, {
         name: 'utm_content',
         placeholder: 'дополнительно',
@@ -47,6 +51,7 @@ const utms = [
             'red_button',
             'short_title',
         ],
+        value: '',
     },
 ];
 

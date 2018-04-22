@@ -4,7 +4,7 @@
   <h3 fxFlex="100">Сайт</h3>
   <mat-form-field fxFlex="100" [floatLabel]="auto">
     <mat-label>Введите адрес сайта</mat-label>
-    <input matInput placeholder="https://example.com">
+    <input matInput placeholder="https://example.com" [(ngModel)]="site" (input)="updateResult()">
   </mat-form-field>
 
   <h3 fxFlex="100">UTM метки</h3>
@@ -16,11 +16,20 @@
     [utmName]="utm.name"
     [utmOptions]="utm.options"
     [utmPlaceholder]="utm.placeholder"
+    (utmChange)="utm.value = $event; updateResult();"
   ></app-utm-input>
 
   <h3 fxFlex="100">Результат</h3>
   <mat-form-field fxFlex="100">
-    <mat-label>Ссылка с utm метками</mat-label>
-    <input matInput value="">
+    <mat-label>Результат</mat-label>
+    <input matInput [(ngModel)]="result">
+    <button mat-icon-button matSuffix (click)="copy()">
+        <mat-icon>content_copy</mat-icon>
+    </button>
+    <button mat-icon-button matSuffix (click)="open()">
+        <mat-icon>open_in_new</mat-icon>
+    </button>
   </mat-form-field>
+
+
 </div>

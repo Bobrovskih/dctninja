@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-utm-input',
@@ -15,10 +16,22 @@ export class UtmInputComponent implements OnInit {
   @Input() utmOptions: string[];
   /** плейсхолдер */
   @Input() utmPlaceholder: string;
+  /** значение изменилось */
+  @Output() utmChange = new EventEmitter<string>();
+  /** подписка на изменение value */
+  valueChange$: Subscription;
 
   constructor() { }
 
   ngOnInit() {
+    this.valueChange$ = this.utmControl
+      .valueChanges
+      .subscribe(value => this.utmChange.emit(value));
   }
+
+  ngOnDestroy(): void {
+    this.valueChange$.unsubscribe();
+  }
+
 
 }
