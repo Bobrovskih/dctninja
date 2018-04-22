@@ -32,6 +32,7 @@ export class UtmGeneratorComponent implements OnInit {
 
     /** открыть в новой вкладке */
     open() {
+        if (!this.result) return;
         window.open(this.result, '_blank');
     }
 
