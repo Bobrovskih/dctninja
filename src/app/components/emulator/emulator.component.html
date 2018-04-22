@@ -1,10 +1,10 @@
 <div fxLayout="row wrap" fxLayoutAlign="start start">
   <h1 fxFlex="100">Эмулятор</h1>
-  <mat-form-field [floatLabel]="auto" fxFlex="45">
+  <mat-form-field floatLabel="auto" fxFlex="45">
     <mat-label>Идентификатор виджета</mat-label>
     <input matInput placeholder="224" [(ngModel)]="wid" (input)="updateResult()">
   </mat-form-field>
-  <mat-form-field [floatLabel]="auto" fxFlexOffset="10" fxFlex="45">
+  <mat-form-field floatLabel="auto" fxFlexOffset="10" fxFlex="45">
     <mat-label>Токен</mat-label>
     <input matInput placeholder="ceb0b254e8d168a9712c290b1b6517102f775f14" [(ngModel)]="token" (input)="updateResult()">
   </mat-form-field>
@@ -33,7 +33,7 @@
     <mat-checkbox fxFlexOffset="5" fxFlex="30" [(ngModel)]="isQuality" (change)="updateResult()">Только качественные</mat-checkbox>
   </div>
 
-  <div fxFlex="100" fxLayoutAlign="center center">
+  <div fxFlex="100" fxLayoutAlign="center center" style="margin: 15px 0px">
     <span>JSON</span>
     <mat-slide-toggle [(ngModel)]="ext" fxFlexOffset="1" (change)="updateResult()"></mat-slide-toggle>
     <span fxFlexOffset="1">CSV</span>
