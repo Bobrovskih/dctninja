@@ -1,29 +1,26 @@
-<div fxFill fxLayout="column" fxLayoutAlign="start start">
-  <h2>Компоновщик UTM меток</h2>
-  <mat-form-field fxFlex="50">
-    <input matInput placeholder="Введите адрес сайта" value="">
-    <mat-hint align="start">
-      <span>Например, https://example.com</span>
-    </mat-hint>
+<div fxFill fxLayout="row wrap" fxLayoutAlign="start start">
+  <h1>Компоновщик UTM меток</h1>
+
+  <h3 fxFlex="100">Сайт</h3>
+  <mat-form-field fxFlex="100" [floatLabel]="auto">
+    <mat-label>Введите адрес сайта</mat-label>
+    <input matInput placeholder="https://example.com">
   </mat-form-field>
 
-  <h3>Выберите UTM метки</h3>
+  <h3 fxFlex="100">UTM метки</h3>
 
-  <mat-form-field fxFlex="20">
-    <input type="text" matInput [formControl]="utmSourceControl" [matAutocomplete]="utmSourceAuto" placeholder="utmSource">
+  <app-utm-input
+    *ngFor="let utm of utms; first as isFirst"
+    fxFlex="15"
+    [fxFlexOffset]="isFirst ? 0 : 6.25"
+    [utmName]="utm.name"
+    [utmOptions]="utm.options"
+    [utmPlaceholder]="utm.placeholder"
+  ></app-utm-input>
+
+  <h3 fxFlex="100">Результат</h3>
+  <mat-form-field fxFlex="100">
+    <mat-label>Ссылка с utm метками</mat-label>
+    <input matInput value="">
   </mat-form-field>
-  <mat-autocomplete #utmSourceAuto="matAutocomplete">
-    <mat-option *ngFor="let option of utmSourceOptions" [value]="option">
-      {{ option }}
-    </mat-option>
-  </mat-autocomplete>
-  <p></p>
-  <mat-form-field fxFlex="20">
-    <input type="text" matInput [formControl]="utmMediumControl" [matAutocomplete]="utmMediumAuto" placeholder="utmMedium">
-  </mat-form-field>
-  <mat-autocomplete #utmMediumAuto="matAutocomplete">
-    <mat-option *ngFor="let option of utmMediumOptions" [value]="option">
-      {{ option }}
-    </mat-option>
-  </mat-autocomplete>
 </div>

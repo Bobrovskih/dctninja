@@ -7,7 +7,6 @@ import { pages } from './pages';
 
 import { RootComponent } from './components';
 
-
 @NgModule({
   declarations: [
     RootComponent,
