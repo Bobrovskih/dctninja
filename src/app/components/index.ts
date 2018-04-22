@@ -11,6 +11,7 @@ import { DocUtmMediumComponent } from './doc-utm-medium';
 import { DocUtmSourceComponent } from './doc-utm-source';
 import { DocUtmTermComponent } from './doc-utm-term';
 import { DocUtmsComponent } from './doc-utms';
+import { EmulatorComponent } from './emulator';
 
 const components = [
     RootComponent,
@@ -26,6 +27,7 @@ const components = [
     DocUtmSourceComponent,
     DocUtmTermComponent,
     DocUtmsComponent,
+    EmulatorComponent,
 ];
 
 export {
@@ -43,4 +45,5 @@ export {
     DocUtmSourceComponent,
     DocUtmTermComponent,
     DocUtmsComponent,
+    EmulatorComponent,
 };

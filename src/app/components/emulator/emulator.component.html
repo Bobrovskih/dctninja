@@ -1,0 +1,51 @@
+<div fxLayout="row wrap" fxLayoutAlign="start start">
+  <h1 fxFlex="100">Эмулятор</h1>
+  <mat-form-field [floatLabel]="auto" fxFlex="45">
+    <mat-label>Идентификатор виджета</mat-label>
+    <input matInput placeholder="224" [(ngModel)]="wid" (input)="updateResult()">
+  </mat-form-field>
+  <mat-form-field [floatLabel]="auto" fxFlexOffset="10" fxFlex="45">
+    <mat-label>Токен</mat-label>
+    <input matInput placeholder="ceb0b254e8d168a9712c290b1b6517102f775f14" [(ngModel)]="token" (input)="updateResult()">
+  </mat-form-field>
+
+  <mat-form-field fxFlex="45">
+    <input matInput [matDatepicker]="pickerDateStart" placeholder="С какого числа" [(ngModel)]="dateStart" (input)="updateResult()"
+      (dateChange)="updateResult()">
+    <mat-datepicker-toggle matSuffix [for]="pickerDateStart"></mat-datepicker-toggle>
+  </mat-form-field>
+  <mat-datepicker #pickerDateStart></mat-datepicker>
+
+  <mat-form-field fxFlex="45" fxFlexOffset="10">
+    <input matInput [matDatepicker]="pickerDateEnd" placeholder="По какое число" [(ngModel)]="dateEnd" (input)="updateResult()"
+      (dateChange)="updateResult()">
+    <mat-datepicker-toggle matSuffix [for]="pickerDateEnd"></mat-datepicker-toggle>
+  </mat-form-field>
+  <mat-datepicker #pickerDateEnd></mat-datepicker>
+
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-select fxFlex="30" placeholder="Тип звонков" [(ngModel)]="callType" name="item" (selectionChange)="updateResult()">
+      <mat-option *ngFor="let item of callTypes" [value]="item.value">
+        {{item.viewValue}}
+      </mat-option>
+    </mat-select>
+    <mat-checkbox fxFlexOffset="5" fxFlex="30" [(ngModel)]="isNew" (change)="updateResult()">Только новые</mat-checkbox>
+    <mat-checkbox fxFlexOffset="5" fxFlex="30" [(ngModel)]="isQuality" (change)="updateResult()">Только качественные</mat-checkbox>
+  </div>
+
+  <div fxFlex="100" fxLayoutAlign="center center">
+    <span>JSON</span>
+    <mat-slide-toggle [(ngModel)]="ext" fxFlexOffset="1" (change)="updateResult()"></mat-slide-toggle>
+    <span fxFlexOffset="1">CSV</span>
+  </div>
+
+  <mat-form-field fxFlex="100">
+    <textarea matInput placeholder="Результат" [(ngModel)]="result" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="5"></textarea>
+    <button mat-icon-button matSuffix (click)="copy()" matTooltip="Скопировать">
+      <mat-icon>content_copy</mat-icon>
+    </button>
+    <button mat-icon-button matSuffix (click)="open()" matTooltip="Открыть">
+      <mat-icon>open_in_new</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
