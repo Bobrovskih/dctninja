@@ -21,9 +21,10 @@ const routes: Routes = [
     redirectTo: 'home',
   },
 ];
+const useHash = true;
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash })],
   exports: [RouterModule]
 })
 export class RoutingModule { }
