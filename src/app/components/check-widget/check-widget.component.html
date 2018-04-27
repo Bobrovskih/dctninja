@@ -1,9 +1,9 @@
 <div fxFill fxLayout="row wrap" fxLayoutAlign="start start">
 
   <h1 fxFlex="100">Проверить код виджета</h1>
-  <mat-form-field floatLabel="auto" fxFlex="20">
+  <mat-form-field floatLabel="auto" fxFlex="20" fxFlex.xs="80" fxFlex.sm="80">
     <mat-label>Введите ID виджета</mat-label>
-    <input matInput placeholder="224" type="numer" [(ngModel)]="wid">
+    <input matInput placeholder="224" type="tel" [(ngModel)]="wid">
   </mat-form-field>
   <button mat-icon-button (click)="build()">
     <mat-icon>check</mat-icon>

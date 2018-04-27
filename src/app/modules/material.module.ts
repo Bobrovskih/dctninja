@@ -15,6 +15,7 @@ import {
   MatSelectModule,
   MatSlideToggleModule,
   MatNativeDateModule,
+  MatMenuModule,
 } from '@angular/material';
 
 const materials = [
@@ -31,6 +32,7 @@ const materials = [
   MatSelectModule,
   MatSlideToggleModule,
   MatNativeDateModule,
+  MatMenuModule,
 ];
 
 @NgModule({

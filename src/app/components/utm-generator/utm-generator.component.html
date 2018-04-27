@@ -9,15 +9,17 @@
 
   <h3 fxFlex="100">UTM метки</h3>
 
-  <app-utm-input
-    *ngFor="let utm of utms; first as isFirst"
-    fxFlex="15"
-    [fxFlexOffset]="isFirst ? 0 : 6.25"
-    [utmName]="utm.name"
-    [utmOptions]="utm.options"
-    [utmPlaceholder]="utm.placeholder"
-    (utmChange)="utm.value = $event; updateResult();"
-  ></app-utm-input>
+  <div fxFlex="100" fxLayout.xs="column" fxLayout.sm="column">
+    <app-utm-input
+        *ngFor="let utm of utms; first as isFirst"
+        fxFlex="15"
+        [fxFlexOffset]="isFirst ? 0 : 6.25"
+        [utmName]="utm.name"
+        [utmOptions]="utm.options"
+        [utmPlaceholder]="utm.placeholder"
+        (utmChange)="utm.value = $event; updateResult();"
+    ></app-utm-input>
+  </div>
 
   <h3 fxFlex="100">Результат</h3>
   <mat-form-field fxFlex="100">
