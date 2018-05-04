@@ -28,7 +28,7 @@
   </mat-form-field>
   <mat-datepicker #pickerDateEnd></mat-datepicker>
 
-  <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column" fxLayout.sm="column">
+  <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign.xs="start center" fxLayoutAlign.sm="start center">
     <mat-select fxFlex="30" placeholder="Тип звонков" [(ngModel)]="callType" name="item" (selectionChange)="updateResult()">
       <mat-option *ngFor="let item of callTypes" [value]="item.value">
         {{item.viewValue}}
