@@ -12,6 +12,7 @@ import { DocUtmSourceComponent } from './doc-utm-source';
 import { DocUtmTermComponent } from './doc-utm-term';
 import { DocUtmsComponent } from './doc-utms';
 import { EmulatorComponent } from './emulator';
+import { GithubCornerComponent } from './github-corner';
 
 const components = [
     RootComponent,
@@ -28,6 +29,7 @@ const components = [
     DocUtmTermComponent,
     DocUtmsComponent,
     EmulatorComponent,
+    GithubCornerComponent,
 ];
 
 export {
@@ -46,4 +48,5 @@ export {
     DocUtmTermComponent,
     DocUtmsComponent,
     EmulatorComponent,
+    GithubCornerComponent,
 };
