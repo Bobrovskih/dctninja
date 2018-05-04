@@ -1,15 +1,10 @@
-<div
-  fxLayout="row wrap"
-  fxLayoutAlign="start start">
+<div fxLayout="row wrap" fxLayoutAlign="start start">
   <h1 fxFlex="100">Эмулятор</h1>
   <mat-form-field floatLabel="auto" fxFlex="45">
     <mat-label>Идентификатор виджета</mat-label>
-    <input matInput placeholder="224" [(ngModel)]="wid" (input)="updateResult()">
+    <input matInput placeholder="224" [(ngModel)]="wid" (input)="updateResult()" type="tel">
   </mat-form-field>
-  <mat-form-field
-    floatLabel="auto"
-    fxFlexOffset="10"
-    fxFlex="45">
+  <mat-form-field floatLabel="auto" fxFlexOffset="10" fxFlex="45">
     <mat-label>Токен</mat-label>
     <input matInput placeholder="ceb0b254e8d168a9712c290b1b6517102f775f14" [(ngModel)]="token" (input)="updateResult()">
   </mat-form-field>
@@ -28,14 +23,18 @@
   </mat-form-field>
   <mat-datepicker #pickerDateEnd></mat-datepicker>
 
-  <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign.xs="start center" fxLayoutAlign.sm="start center">
-    <mat-select fxFlex="30" placeholder="Тип звонков" [(ngModel)]="callType" name="item" (selectionChange)="updateResult()">
-      <mat-option *ngFor="let item of callTypes" [value]="item.value">
-        {{item.viewValue}}
-      </mat-option>
-    </mat-select>
-    <mat-checkbox fxFlexOffset="5" fxFlex="30" [(ngModel)]="isNew" (change)="updateResult()">Только новые</mat-checkbox>
-    <mat-checkbox fxFlexOffset="5" fxFlex="30" [(ngModel)]="isQuality" (change)="updateResult()">Только качественные</mat-checkbox>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign.xs="start center"
+    fxLayoutAlign.sm="start center" fxFlex="100">
+    <mat-form-field fxFlex="40">
+      <mat-select placeholder="Тип звонков" [(ngModel)]="callType" name="item" (selectionChange)="updateResult()">
+        <mat-option *ngFor="let item of callTypes" [value]="item.value">
+          {{item.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox fxFlex="20" [(ngModel)]="isNew" (change)="updateResult()">Только новые</mat-checkbox>
+    <mat-checkbox fxFlex="20" [(ngModel)]="isQuality" (change)="updateResult()">Только качественные</mat-checkbox>
   </div>
 
   <div fxFlex="100" fxLayoutAlign="center center" style="margin: 15px 0px">
